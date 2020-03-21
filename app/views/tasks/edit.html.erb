@@ -1,0 +1,9 @@
+<%#identido ao new, pois podemos  usar o mesmo formulario para editar o objeto, porem utilizando o @task para alimentar o formulario %>
+
+<%= form_for @task do |f| %>
+    <%= f.label :description, 'Descrição' %>
+    <%= f.text_field :description %>
+    <%= f.label :status, 'Status' %>
+    <%= f.check_box :status %>
+    <%= f.submit 'Editar' %>
+<% end %>

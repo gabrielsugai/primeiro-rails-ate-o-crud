@@ -1,10 +1,15 @@
 <h1>Bem-vindo ao Task List!</h1>
 <p>Isto é uma página HTML</p>
 <em>Criada em <%= Date.today %></em>
-
+</br>
+</br>
+<%= link_to 'Adicionar Tarefa', new_task_path %>
 </br>
 </br>
 <% @tasks.each do |task| %>
     <%= task.description %>
+    <!-- caminho para editar esse objeto -->
+    <%= link_to 'Editar', edit_task_path(task) %>
+    <%= link_to 'Apagar', task_path(task), method: :delete, data: {confirm: 'Quer mesmo apagar?'} %>
     </br>
 <% end %>
